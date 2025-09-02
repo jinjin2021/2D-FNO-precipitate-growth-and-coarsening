@@ -1,0 +1,32 @@
+data:
+  name: '2D_FNO'
+  total_num: 64
+  n_train: 50
+  n_test: 14
+  nx: 64
+  nt: 100
+  sub: 1
+  sub_t: 1
+  M: 1.0
+  L: 1.0
+
+train:
+  batchsize: 2
+  epochs: 1000
+  milestones: [100, 200, 300, 400, 500, 600, 700, 800, 900, 1000]
+  base_lr: 0.001 #initial learning rate
+  scheduler_gamma: 0.9
+  Dc_loss: 1.0
+  Deta_loss: 1.0
+  save_dir: '2D_FNO'
+  save_name: '2D_FNO.pt'
+  ckpt: '/scratch/ggangmei/NO_paper/FNO_paper/checkpoints/2D_FNO/2D_FNO.pt'
+  ckpt_freq: 100
+
+log:
+  project: '2D_FNO'
+  group: '2D_FNOL'
+
+test:
+  batchsize: 1 # should be 1 for storing the test with for loop
+  ckpt: '/scratch/ggangmei/NO_paper/FNO_paper/checkpoints/2D_FNO/2D_FNO.pt'

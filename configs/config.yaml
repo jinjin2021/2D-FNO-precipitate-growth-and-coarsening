@@ -1,8 +1,8 @@
 data:
   name: '2D_FNO'
-  total_num: 64
-  n_train: 50
-  n_test: 14
+  total_num: 400
+  n_train: 360
+  n_test: 40
   nx: 64
   nt: 100
   sub: 1
@@ -20,13 +20,13 @@ train:
   Deta_loss: 1.0
   save_dir: '2D_FNO'
   save_name: '2D_FNO.pt'
-  ckpt: '/scratch/ggangmei/NO_paper/FNO_paper/checkpoints/2D_FNO/2D_FNO.pt'
+  ckpt: '/checkpoints/2D_FNO/2D_FNO.pt'
   ckpt_freq: 100
 
 log:
   project: '2D_FNO'
-  group: '2D_FNOL'
+  group: '2D_FNO'
 
 test:
   batchsize: 1 # should be 1 for storing the test with for loop
-  ckpt: '/scratch/ggangmei/NO_paper/FNO_paper/checkpoints/2D_FNO/2D_FNO.pt'
+  ckpt: '/checkpoints/2D_FNO/2D_FNO.pt'
